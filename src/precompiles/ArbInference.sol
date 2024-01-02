@@ -10,4 +10,6 @@ pragma solidity >=0.4.21 <0.9.0;
 interface ArbInference {
     function inferCall(bytes memory input) external returns (bytes memory);
     function inferCallZK(bytes memory input) external returns (bytes memory);
+    function inferCallPipeline(bytes memory input) external returns (bytes memory);
+    function inferCallPrivate(bytes memory input) external returns (bytes memory);
 }
