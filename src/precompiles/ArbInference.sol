@@ -8,8 +8,8 @@ pragma solidity >=0.4.21 <0.9.0;
 /// @notice This contract is used to run on-chain inference.
 /// This custom contract will set on 0x000000000000000000000000000000000000011a since we set it in precompile.go.
 interface ArbInference {
-    function inferCall(bytes memory input) external returns (bytes memory);
-    function inferCallZK(bytes memory input) external returns (bytes memory);
-    function inferCallPipeline(bytes memory input) external returns (bytes memory);
-    function inferCallPrivate(bytes memory input) external returns (bytes memory);
+    function inferCall(bytes memory model, bytes memory input) external returns (bytes memory);
+    function inferCallZK(bytes memory model, bytes memory input) external returns (bytes memory);
+    function inferCallPipeline(bytes memory model, bytes memory pipeline, bytes memory seed, bytes memory input) external returns (bytes memory);
+    function inferCallPrivate(bytes memory ip, bytes memory model, bytes memory input) external returns (bytes memory);
 }
